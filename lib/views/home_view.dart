@@ -39,18 +39,8 @@ class HomeView extends StatelessWidget {
                     child: SizedBox(
                   height: 20,
                 )),
-                SliverToBoxAdapter(child: NewsListView()),
+                NewsListView(),
               ],
-            )
-            // Column(
-            //   children: const [
-            //     CategoriesListView(),
-            //     SizedBox(
-            //       height: 20,
-            //     ),
-            //     Expanded(child: NewsListView())
-            //   ],
-            // ),
-            )); //CategoriesListView(),);
+            )));
   }
 }
