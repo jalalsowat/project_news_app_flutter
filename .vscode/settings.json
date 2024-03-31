@@ -1,7 +1,10 @@
 {
     "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#1073cf2d",
+        "editor.lineHighlightBorder": "#9fced11f",
         "activityBar.background": "#44185C",
         "titleBar.activeBackground": "#602281",
         "titleBar.activeForeground": "#FDFCFE"
-    }
+    },
+    "cmake.sourceDirectory": "C:/Users/jalal/news_app/windows/flutter"
 }
