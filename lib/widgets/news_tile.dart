@@ -21,7 +21,7 @@ class NewsTile extends StatelessWidget {
           height: 12,
         ),
         const Text(
-          "Large Title should be places in this place ",
+          "  built heigh obama barak ",
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
