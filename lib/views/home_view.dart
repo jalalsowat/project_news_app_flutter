@@ -13,9 +13,9 @@ class HomeView extends StatelessWidget {
           centerTitle: true,
           elevation: 0,
           backgroundColor: Colors.transparent,
-          title: Row(
+          title: const Row(
             mainAxisSize: MainAxisSize.min,
-            children: const [
+            children: [
               Text(
                 "News ",
                 style: TextStyle(color: Colors.black),
