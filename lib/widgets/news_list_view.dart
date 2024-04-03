@@ -1,37 +1,16 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
-import 'package:news_app/services/news_service.dart';
 import 'news_tile.dart';
 
-class NewsListView extends StatefulWidget {
+class NewsListView extends StatelessWidget {
   const NewsListView({
-    Key? key,
-  }) : super(key: key);
+    required this.articles,
+    super.key,
+  });
+
+  final List<ArticleModel> articles;
 
   @override
-  State<NewsListView> createState() => _NewsListViewState();
-}
-
-class _NewsListViewState extends State<NewsListView> {
-  List<ArticleModel> articles = [];
-
-  @override
-  void initState() {
-    super.initState();
-    getGeneralNews();
-  }
-
-  Future<void> getGeneralNews() async {
-    articles = await NewsService(Dio()).getNews();
-    setState(() {});
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return SliverList(
