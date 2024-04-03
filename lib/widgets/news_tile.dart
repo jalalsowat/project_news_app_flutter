@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/models/article_model.dart';
 
 class NewsTile extends StatelessWidget {
-  const NewsTile({super.key});
+  const NewsTile({super.key, required this.articleModel});
+
+  final ArticleModel articleModel;
 
   @override
   Widget build(BuildContext context) {
@@ -10,30 +13,32 @@ class NewsTile extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
-          child: Image.network(
-            "https://i.postimg.cc/yYMcXzLY/Elon-Musk-gives-tour-for-President-Barack-Obama.jpg",
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: 200,
-          ),
+          child: articleModel.image != null
+              ? Image.network(
+                  articleModel.image!,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  height: 200,
+                )
+              : Image.asset("assets/entertaiment.avif"),
         ),
         const SizedBox(
           height: 12,
         ),
-        const Text(
-          "  built heigh obama barak ",
+        Text(
+          articleModel.title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500),
         ),
         const SizedBox(
           height: 8,
         ),
-        const Text(
-          "and here is the description of the news you can place ",
+        Text(
+          articleModel.subTitle ?? '',
           maxLines: 2,
-          style: TextStyle(color: Colors.grey, fontSize: 14),
+          style: const TextStyle(color: Colors.grey, fontSize: 14),
         )
       ],
     );
