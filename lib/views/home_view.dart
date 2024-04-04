@@ -38,7 +38,9 @@ class HomeView extends StatelessWidget {
                     child: SizedBox(
                   height: 20,
                 )),
-                NewListViewBuilder(),
+                NewListViewBuilder(
+                  category: 'general',
+                ),
               ],
             )));
   }
